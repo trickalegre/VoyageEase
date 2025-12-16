@@ -1,13 +1,13 @@
 <?php
 include 'db.php';
 
-/* ADMIN SESSION CHECK — NO isset */
+
 if (empty($_SESSION['admin'])) {
     header("Location: admin_login.php");
     exit;
 }
 
-/* DELETE BOOKING */
+
 if (!empty($_GET['delete'])) {
     sqlsrv_query(
         $conn,
@@ -18,7 +18,7 @@ if (!empty($_GET['delete'])) {
     exit;
 }
 
-/* FETCH ALL BOOKINGS */
+
 $sql = "
 SELECT B.BookingID, B.Destination, B.TravelDate, B.Travelers, B.TotalPrice,
        U.FullName, U.Email
@@ -38,7 +38,7 @@ if ($pat === false) {
 <head>
 <title>Admin Dashboard</title>
 
-<!-- ✅ CORRECT BOOTSTRAP CDN -->
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>

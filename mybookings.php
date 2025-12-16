@@ -1,7 +1,7 @@
 <?php
 include 'db.php';
 
-/* USER SESSION CHECK — NO isset */
+
 if (empty($_SESSION['user'])) {
     header("Location: login.php");
     exit;

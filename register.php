@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $pass  = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    /* CHECK IF EMAIL EXISTS */
+  
     $check = sqlsrv_query(
         $conn,
         "SELECT UserID FROM Users WHERE Email = ?",
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($check && sqlsrv_has_rows($check)) {
         $error = "This email is already registered. Please log in instead.";
     } else {
-        /* INSERT NEW USER */
+       
         $insert = sqlsrv_query(
             $conn,
             "INSERT INTO Users (FullName, Email, PasswordHash)

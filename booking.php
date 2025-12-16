@@ -2,9 +2,9 @@
 include 'db.php';
 
 $dest  = $_GET['dest'];
-$price = $_GET['price']; // PHP Peso
+$price = $_GET['price'];
 
-/* DESTINATION COORDINATES */
+
 $coords = [
   "Boracay" => [11.9674, 121.9248],
   "El Nido" => [11.2027, 119.4079],
@@ -42,14 +42,14 @@ $lng = $coords[$dest][1];
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-<!-- MAPBOX -->
+
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 </head>
 
 <body class="bg-booking">
 
-<!-- NAVBAR -->
+
 <nav class="navbar navbar-dark bg-dark px-4">
   <div class="d-flex align-items-center">
     <img src="logo.png" class="logo-circle me-2">
@@ -64,7 +64,7 @@ $lng = $coords[$dest][1];
 <div class="container mt-4">
 <div class="row">
 
-<!-- BOOKING FORM -->
+
 <div class="col-md-4">
 <div class="card p-4 mb-3">
 
@@ -105,7 +105,7 @@ $lng = $coords[$dest][1];
 </div>
 </div>
 
-<!-- MAP + WEATHER -->
+
 <div class="col-md-8">
 
 <div class="card p-3 mb-3">
@@ -123,7 +123,7 @@ $lng = $coords[$dest][1];
 </div>
 
 <script>
-/* MAPBOX MAP */
+
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFkbGFuZ3R1dGEzMjIiLCJhIjoiY21qN2ZmcXgyMDNtZDNlb2VyN3RqZmlmcyJ9.-4-QaPTc-8HXc3xVgZP3vg';
 
 const map = new mapboxgl.Map({
@@ -138,7 +138,7 @@ new mapboxgl.Marker()
   .setPopup(new mapboxgl.Popup().setText("<?= $dest ?>"))
   .addTo(map);
 
-/* WEATHER */
+
 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=<?= $lat ?>&lon=<?= $lng ?>&units=metric&appid=0820140edc48fe0e433abe1f3dae7bda`)
 .then(res => res.json())
 .then(data => {
@@ -147,7 +147,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=<?= $lat ?>&lon=<?= $
      Temperature: ${data.main.temp}°C`;
 });
 
-/* CURRENCY */
+
 const pricePHP = <?= $price ?>;
 document.getElementById("currency").addEventListener("change", function(){
   const currency = this.value;

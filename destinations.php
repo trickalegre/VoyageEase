@@ -51,7 +51,7 @@ $intl = [
   min-height: 100vh;
 ">
 
-<!-- NAVBAR -->
+
 <nav class="navbar navbar-dark bg-dark px-4">
   <div class="d-flex align-items-center">
     <img src="logo.png" class="logo-circle me-2">

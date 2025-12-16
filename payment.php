@@ -8,10 +8,10 @@ $trav = $_POST['trav'];
 $price = $_POST['price'];
 $total = $trav * $price;
 
-/* WHEN PAY BUTTON IS CLICKED */
+
 if(isset($_POST['pay'])){
     $method = $_POST['payment_method'];
-    $status = "Paid"; // CONFIRMED OPTION A
+    $status = "Paid";
 
     sqlsrv_query($conn,
     "INSERT INTO Bookings
