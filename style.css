@@ -1,0 +1,95 @@
+/* RESET */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* BACKGROUND IMAGE */
+.bg-home {
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('bg_home_1.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+}
+
+/* HERO MUST HAVE HEIGHT */
+.hero {
+  min-height: calc(100vh - 56px); /* subtract navbar height */
+  padding: 2rem;
+}
+
+/* LOGO */
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+  padding: 2px;
+}
+
+/* BUTTON POLISH */
+.btn-primary {
+  border-radius: 30px;
+  padding: 10px 28px;
+}
+
+.destination-card img {
+  height: 100px;
+  object-fit: cover;
+}
+
+.destination-card {
+  overflow: hidden;
+}
+/* HERO BUTTON */
+.hero-btn {
+  transition: all 0.3s ease;
+}
+.hero-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,123,255,0.4);
+}
+
+/* DESTINATION CARD */
+.destination-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 14px;
+}
+.destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+}
+
+/* IMAGE ZOOM */
+.destination-card img {
+  height: 110px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.destination-card:hover img {
+  transform: scale(1.08);
+}
+
+/* SMOOTH NAVBAR */
+.navbar {
+  backdrop-filter: blur(6px);
+}
+
+/* CARD BUTTON */
+.destination-card .btn {
+  transition: all 0.3s ease;
+}
+.destination-card .btn:hover {
+  transform: scale(1.05);
+}
+
+.bg-destinations {
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('home_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
